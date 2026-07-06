@@ -16,7 +16,7 @@
     <div class="announcement">Offre été : expédition rapide 24/48h, retour sous 30 jours</div>
     <nav class="navbar" aria-label="Navigation principale">
       <a class="brand" href="site.html" aria-label="Accueil FRESCOO">
-        <span class="brand-mark" aria-hidden="true">💨</span>
+        <img class="brand-logo" src="assets/logo-sans-texte.png" alt="" aria-hidden="true" />
         <span>FRESCOO</span>
       </a>
       <div class="nav-links">
@@ -40,7 +40,7 @@
       <div class="section-inner">
         <p class="eyebrow">Contact</p>
         <h1>Besoin d'un conseil ?</h1>
-        <p>Écrivez-nous pour choisir le bon ventilateur selon la taille de votre pièce, votre budget ou votre besoin de silence.</p>
+        <p>Envoyez votre demande pour choisir le bon mini climatiseur, poser une question sur une commande ou demander un retour.</p>
       </div>
     </section>
 
@@ -63,13 +63,20 @@
                 <option value="">Choisir un sujet</option>
                 <option>Conseil avant achat</option>
                 <option>Livraison</option>
-                <option>Garantie</option>
+                <option>Retour ou échange</option>
+                <option>Question sur un produit</option>
                 <option>Autre demande</option>
               </select>
             </div>
             <div class="field">
+              <label for="product">Produit concerné</label>
+              <select id="product" name="product">
+                <option value="">Aucun produit précis</option>
+              </select>
+            </div>
+            <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Je cherche un ventilateur silencieux pour une chambre de 14 m²..." required></textarea>
+              <textarea id="message" name="message" placeholder="Bonjour, je cherche un mini climatiseur adapté à une chambre de 14 m²..." required></textarea>
             </div>
             <button class="btn btn-primary" type="submit">Envoyer</button>
             <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
@@ -83,12 +90,12 @@
             <span>24/48h en France métropolitaine, frais calculés au panier.</span>
           </div>
           <div class="contact-info">
-            <strong>🛡️ Garantie</strong>
-            <span>2 ans sur tous les modèles FRESCOO.</span>
+            <strong>↩️ Retours</strong>
+            <span>Demande de retour ou d'échange via le formulaire.</span>
           </div>
           <div class="contact-info">
             <strong>💬 Support</strong>
-            <span>Réponse simulée sous 24h ouvrées.</span>
+            <span>Réponse par email après réception de la demande.</span>
           </div>
         </aside>
       </div>
@@ -98,7 +105,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
-        <h3>FRESCOO</h3>
+        <img class="footer-logo" src="assets/logo.png" alt="FRESCOO Climatisation & Confort" />
         <p>Mini climatiseurs portables et refroidisseurs d'air pour retrouver de l'air frais, chez soi comme au travail.</p>
       </div>
       <div>

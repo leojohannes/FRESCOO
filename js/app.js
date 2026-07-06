@@ -1,6 +1,7 @@
 (function () {
   const products = window.FRESCOO_PRODUCTS || [];
   const storageKey = "frescoo-cart";
+  const contactRecipient = "leojohannes84@gmail.com";
   const money = new Intl.NumberFormat("fr-FR", {
     style: "currency",
     currency: "EUR"
@@ -324,10 +325,39 @@
   function bindContactPage() {
     const form = $("#contactForm");
     if (!form) return;
+
+    const productSelect = $("#product");
+    if (productSelect) {
+      productSelect.innerHTML += products
+        .map((product) => `<option value="${product.name}">${product.name}</option>`)
+        .join("");
+    }
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      $("#formMessage").textContent = "Message reçu. Notre équipe vous répondra bientôt.";
-      form.reset();
+      const formData = new FormData(form);
+      const name = formData.get("name") || "";
+      const email = formData.get("email") || "";
+      const topic = formData.get("topic") || "Demande client";
+      const product = formData.get("product") || "Aucun produit précis";
+      const message = formData.get("message") || "";
+      const subject = `[FRESCOO] ${topic} - ${name}`;
+      const body = [
+        "Nouvelle demande depuis le site FRESCOO",
+        "",
+        `Nom : ${name}`,
+        `Email : ${email}`,
+        `Sujet : ${topic}`,
+        `Produit concerné : ${product}`,
+        "",
+        "Message :",
+        message,
+        "",
+        "Répondre directement à l'adresse email du client."
+      ].join("\n");
+
+      window.location.href = `mailto:${contactRecipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      $("#formMessage").textContent = "Votre application email va s'ouvrir avec la demande prête à envoyer.";
     });
   }
 
