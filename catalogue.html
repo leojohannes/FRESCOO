@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catalogue FRESCOO : mini climatiseurs portables, refroidisseurs d'air et humidificateurs avec filtres fonctionnels." />
+  <title>FRESCOO - Catalogue</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="catalogue">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="announcement">Offre été : expédition rapide 24/48h, retour sous 30 jours</div>
+    <nav class="navbar" aria-label="Navigation principale">
+      <a class="brand" href="site.html" aria-label="Accueil FRESCOO">
+        <span class="brand-mark" aria-hidden="true">💨</span>
+        <span>FRESCOO</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" data-page="accueil" href="site.html">Accueil</a>
+        <a class="nav-link" data-page="catalogue" href="catalogue.html">Catalogue</a>
+        <a class="nav-link" data-page="produit" href="produit.html">Produit</a>
+        <a class="nav-link" data-page="panier" href="panier.html">Panier</a>
+        <a class="nav-link" data-page="apropos" href="apropos.html">À propos</a>
+        <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+      </div>
+      <a class="cart-button" href="panier.html" aria-label="Voir le panier">
+        <span aria-hidden="true">🛒</span>
+        <span>Panier</span>
+        <span class="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero page-hero-small">
+      <div class="section-inner">
+        <p class="eyebrow">Catalogue</p>
+        <h1>Trouvez le bon flux d'air</h1>
+        <p>Filtrez par type, prix, puissance et niveau sonore. Les résultats se mettent à jour instantanément.</p>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="section-inner catalog-layout">
+        <aside class="filters" aria-label="Filtres produits">
+          <h2>Filtres</h2>
+          <div class="filter-group">
+            <strong>Type</strong>
+            <label class="check-row">
+              <input type="checkbox" value="Réservoir 1700 ml" data-type-filter checked />
+              <span>Réservoir 1700 ml</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" value="LED 3-en-1" data-type-filter checked />
+              <span>LED 3-en-1</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" value="USB transparent" data-type-filter checked />
+              <span>USB transparent</span>
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <label for="priceRange">
+              <span>Prix maximum</span>
+              <strong id="priceValue">150 €</strong>
+            </label>
+            <input id="priceRange" type="range" min="35" max="150" step="5" value="150" />
+            <small>Inclut les promotions du moment.</small>
+          </div>
+
+          <div class="filter-group">
+            <label for="powerRange">
+              <span>Puissance minimale</span>
+              <strong id="powerValue">0 W</strong>
+            </label>
+            <input id="powerRange" type="range" min="0" max="60" step="5" value="0" />
+            <small>Plus la puissance est haute, plus le brassage est marqué.</small>
+          </div>
+
+          <div class="filter-group">
+            <label class="check-row">
+              <input id="silentOnly" type="checkbox" />
+              <span>Silencieux uniquement 🔇</span>
+            </label>
+          </div>
+
+          <button class="btn btn-secondary" id="clearFilters" type="button">Réinitialiser</button>
+        </aside>
+
+        <div class="catalog-main">
+          <div class="catalog-toolbar">
+            <p id="resultCount">3 produits</p>
+            <label>
+              <span class="sr-only">Trier les produits</span>
+              <select class="select" id="sortSelect">
+                <option value="featured">Tri recommandé</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+                <option value="power-desc">Puissance décroissante</option>
+                <option value="rating-desc">Avis clients</option>
+              </select>
+            </label>
+          </div>
+          <div class="empty-state" id="emptyState">Aucun refroidisseur ne correspond à ces filtres pour l'instant.</div>
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>FRESCOO</h3>
+        <p>Mini climatiseurs portables et refroidisseurs d'air pour retrouver de l'air frais, chez soi comme au travail.</p>
+      </div>
+      <div>
+        <h4>Boutique</h4>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="produit.html">Fiche produit</a>
+        <a href="panier.html">Panier</a>
+      </div>
+      <div>
+        <h4>Aide</h4>
+        <a href="contact.html">Contact</a>
+        <a href="apropos.html">À propos</a>
+        <a href="apropos.html#mentions">Mentions légales</a>
+      </div>
+      <div>
+        <h4>Réseaux</h4>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 FRESCOO. Site de démonstration sans paiement réel.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

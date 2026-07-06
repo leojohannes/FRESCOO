@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contactez FRESCOO pour choisir un mini climatiseur portable adapté à votre maison ou votre bureau." />
+  <title>FRESCOO - Contact</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="announcement">Offre été : expédition rapide 24/48h, retour sous 30 jours</div>
+    <nav class="navbar" aria-label="Navigation principale">
+      <a class="brand" href="site.html" aria-label="Accueil FRESCOO">
+        <span class="brand-mark" aria-hidden="true">💨</span>
+        <span>FRESCOO</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" data-page="accueil" href="site.html">Accueil</a>
+        <a class="nav-link" data-page="catalogue" href="catalogue.html">Catalogue</a>
+        <a class="nav-link" data-page="produit" href="produit.html">Produit</a>
+        <a class="nav-link" data-page="panier" href="panier.html">Panier</a>
+        <a class="nav-link" data-page="apropos" href="apropos.html">À propos</a>
+        <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+      </div>
+      <a class="cart-button" href="panier.html" aria-label="Voir le panier">
+        <span aria-hidden="true">🛒</span>
+        <span>Panier</span>
+        <span class="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero page-hero-small">
+      <div class="section-inner">
+        <p class="eyebrow">Contact</p>
+        <h1>Besoin d'un conseil ?</h1>
+        <p>Écrivez-nous pour choisir le bon ventilateur selon la taille de votre pièce, votre budget ou votre besoin de silence.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner contact-layout">
+        <article class="contact-card">
+          <h2>Nous écrire</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" placeholder="Votre nom" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="vous@exemple.fr" required />
+            </div>
+            <div class="field">
+              <label for="topic">Sujet</label>
+              <select id="topic" name="topic" required>
+                <option value="">Choisir un sujet</option>
+                <option>Conseil avant achat</option>
+                <option>Livraison</option>
+                <option>Garantie</option>
+                <option>Autre demande</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Je cherche un ventilateur silencieux pour une chambre de 14 m²..." required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <aside class="contact-aside">
+          <h2>Infos utiles</h2>
+          <div class="contact-info">
+            <strong>📦 Livraison</strong>
+            <span>24/48h en France métropolitaine, frais calculés au panier.</span>
+          </div>
+          <div class="contact-info">
+            <strong>🛡️ Garantie</strong>
+            <span>2 ans sur tous les modèles FRESCOO.</span>
+          </div>
+          <div class="contact-info">
+            <strong>💬 Support</strong>
+            <span>Réponse simulée sous 24h ouvrées.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>FRESCOO</h3>
+        <p>Mini climatiseurs portables et refroidisseurs d'air pour retrouver de l'air frais, chez soi comme au travail.</p>
+      </div>
+      <div>
+        <h4>Boutique</h4>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="produit.html">Fiche produit</a>
+        <a href="panier.html">Panier</a>
+      </div>
+      <div>
+        <h4>Aide</h4>
+        <a href="contact.html">Contact</a>
+        <a href="apropos.html">À propos</a>
+        <a href="apropos.html#mentions">Mentions légales</a>
+      </div>
+      <div>
+        <h4>Réseaux</h4>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 FRESCOO. Site de démonstration sans paiement réel.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

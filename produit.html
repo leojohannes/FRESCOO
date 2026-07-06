@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fiche produit FRESCOO avec images, prix, caractéristiques techniques et avis clients." />
+  <title>FRESCOO - Fiche produit</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="produit">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="announcement">Offre été : expédition rapide 24/48h, retour sous 30 jours</div>
+    <nav class="navbar" aria-label="Navigation principale">
+      <a class="brand" href="site.html" aria-label="Accueil FRESCOO">
+        <span class="brand-mark" aria-hidden="true">💨</span>
+        <span>FRESCOO</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" data-page="accueil" href="site.html">Accueil</a>
+        <a class="nav-link" data-page="catalogue" href="catalogue.html">Catalogue</a>
+        <a class="nav-link" data-page="produit" href="produit.html">Produit</a>
+        <a class="nav-link" data-page="panier" href="panier.html">Panier</a>
+        <a class="nav-link" data-page="apropos" href="apropos.html">À propos</a>
+        <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+      </div>
+      <a class="cart-button" href="panier.html" aria-label="Voir le panier">
+        <span aria-hidden="true">🛒</span>
+        <span>Panier</span>
+        <span class="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero page-hero-small">
+      <div class="section-inner">
+        <p class="eyebrow">Fiche produit</p>
+        <h1>Détails, avis et caractéristiques</h1>
+        <p>Changez de modèle avec les miniatures, puis ajoutez le ventilateur au panier en un clic.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="detail-shell" id="productDetail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Vous aimerez aussi</p>
+            <h2>Comparer les autres modèles</h2>
+          </div>
+          <p>Chaque page produit reste connectée au même panier.</p>
+        </div>
+        <div class="product-grid" id="relatedGrid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>FRESCOO</h3>
+        <p>Mini climatiseurs portables et refroidisseurs d'air pour retrouver de l'air frais, chez soi comme au travail.</p>
+      </div>
+      <div>
+        <h4>Boutique</h4>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="produit.html">Fiche produit</a>
+        <a href="panier.html">Panier</a>
+      </div>
+      <div>
+        <h4>Aide</h4>
+        <a href="contact.html">Contact</a>
+        <a href="apropos.html">À propos</a>
+        <a href="apropos.html#mentions">Mentions légales</a>
+      </div>
+      <div>
+        <h4>Réseaux</h4>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 FRESCOO. Site de démonstration sans paiement réel.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
