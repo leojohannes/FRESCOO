@@ -1,4 +1,4 @@
-window.FRESCOO_PRODUCTS = [
+﻿window.FRESCOO_PRODUCTS = [
   {
     id: "cooltouch-1700",
     sourceUrl: "https://a.aliexpress.com/_EvmuQKO",

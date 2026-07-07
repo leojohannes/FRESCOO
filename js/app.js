@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const products = window.FRESCOO_PRODUCTS || [];
   const storageKey = "frescoo-cart";
   const contactRecipient = "leojohannes84@gmail.com";
