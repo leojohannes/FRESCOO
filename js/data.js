@@ -16,7 +16,7 @@
     badge: "1700 ml",
     short: "Mini climatiseur portable 3-en-1 avec grand réservoir, commande tactile et oscillation 120°.",
     description: "Le CoolTouch 1700 reprend les informations du modèle AliExpress 1700 ml : un mini refroidisseur d'air 3-en-1 portable, pensé pour la maison ou le bureau, avec contrôle tactile intelligent, oscillation à 120 degrés et 3 vitesses de ventilation.",
-    features: ["💧 Réservoir 1700 ml", "🖐️ Commande tactile", "↔️ Oscillation 120°", "💨 3 vitesses"],
+    features: ["Réservoir 1700 ml", "Commande tactile", "Oscillation 120°", "3 vitesses"],
     specs: [
       ["Type", "Mini climatiseur portable 3-en-1"],
       ["Réservoir", "1700 ml"],
@@ -47,7 +47,7 @@
     badge: "LED nuit",
     short: "Petit refroidisseur d'air 3-en-1 avec humidificateur portable et veilleuse LED.",
     description: "Le LumiCool LED correspond au modèle 3-en-1 présenté comme ventilateur, petit climatiseur d'appoint et humidificateur portable. Sa veilleuse LED le rend adapté au bureau, à une chambre ou à une utilisation d'appoint à la maison.",
-    features: ["🌙 Veilleuse LED", "💧 Humidificateur", "🏠 Maison & bureau", "💨 Air réglable"],
+    features: ["Veilleuse LED", "Humidificateur", "Maison & bureau", "Air réglable"],
     specs: [
       ["Type", "Ventilateur climatiseur 3-en-1"],
       ["Fonctions", "Ventilation, refroidissement, humidification"],
@@ -78,7 +78,7 @@
     badge: "USB",
     short: "Ventilateur climatiseur de bureau mini portable, faible bruit, humidificateur et charge USB.",
     description: "Le ClearBreeze USB reprend les points clés du modèle transparent : format mini de bureau, faible bruit, fonction humidificateur puissante, refroidissement d'appoint et recharge USB. Son design transparent donne un style plus premium et décoratif.",
-    features: ["🔌 Charge USB", "🔇 Faible bruit", "💧 Humidificateur", "✨ Design transparent"],
+    features: ["Charge USB", "Faible bruit", "Humidificateur", "Design transparent"],
     specs: [
       ["Type", "Mini climatiseur de bureau portable"],
       ["Alimentation", "Recharge USB"],

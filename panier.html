@@ -6,8 +6,9 @@
   <meta name="description" content="Panier FRESCOO avec récapitulatif, quantités et calcul du total." />
   <title>FRESCOO - Panier</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/data.js" charset="UTF-8" defer></script>
-  <script src="js/app.js" charset="UTF-8" defer></script>
+  <script src="js/data.js?v=4" charset="UTF-8" defer></script>
+  <script src="js/payment-config.js?v=4" charset="UTF-8" defer></script>
+  <script src="js/app.js?v=4" charset="UTF-8" defer></script>
 </head>
 <body data-page="panier">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -40,7 +41,7 @@
       <div class="section-inner">
         <p class="eyebrow">Panier</p>
         <h1>Votre récapitulatif</h1>
-        <p>Ajoutez, retirez ou ajustez les quantités. Le total se calcule immédiatement, sans paiement réel.</p>
+        <p>Ajoutez, retirez ou ajustez les quantités. Le paiement est prévu via une page Stripe sécurisée.</p>
       </div>
     </section>
 
@@ -62,7 +63,8 @@
             <strong id="totalAmount">0 €</strong>
           </div>
           <p class="delivery-note" id="deliveryNote">Ajoutez un ventilateur pour commencer.</p>
-          <button class="btn btn-primary" type="button" id="checkoutButton">Simuler la commande</button>
+          <p class="payment-note" id="paymentNote">Carte bancaire et Apple Pay disponibles via Stripe une fois les liens configurés.</p>
+          <button class="btn btn-primary" type="button" id="checkoutButton">Payer par carte / Apple Pay</button>
           <button class="btn btn-secondary" type="button" id="clearCartButton">Vider le panier</button>
         </aside>
       </div>

@@ -1,5 +1,6 @@
 ﻿(function () {
   const products = window.FRESCOO_PRODUCTS || [];
+  const paymentConfig = window.FRESCOO_PAYMENTS || {};
   const storageKey = "frescoo-cart";
   const contactRecipient = "leojohannes84@gmail.com";
   const money = new Intl.NumberFormat("fr-FR", {
@@ -23,6 +24,19 @@
 
   function getProduct(id) {
     return products.find((product) => product.id === id);
+  }
+
+  function getPaymentLink(id) {
+    return paymentConfig.productLinks?.[id] || "";
+  }
+
+  function isPaymentLinkReady(link) {
+    return typeof link === "string" && /^https:\/\/.+/i.test(link.trim());
+  }
+
+  function isAnyPaymentConfigured() {
+    const productLinks = Object.values(paymentConfig.productLinks || {});
+    return isPaymentLinkReady(paymentConfig.cartCheckoutLink) || productLinks.some(isPaymentLinkReady);
   }
 
   function loadCart() {
@@ -98,14 +112,14 @@
         <div class="product-body">
           <div class="product-meta">
             <span>${product.type}</span>
-            <span class="rating">? ${product.rating.toFixed(1)} (${product.reviewsCount})</span>
+            <span class="rating">Avis ${product.rating.toFixed(1)} (${product.reviewsCount})</span>
           </div>
           <h3>${product.name}</h3>
           <p>${product.short}</p>
           <div class="feature-tags">
-            <span class="feature-tag">${product.silent ? "🔇" : "💨"} ${silentLabel}</span>
-            <span class="feature-tag">? ${product.power} W</span>
-            <span class="feature-tag">💬 ${product.noise} dB</span>
+            <span class="feature-tag">${silentLabel}</span>
+            <span class="feature-tag">${product.power} W</span>
+            <span class="feature-tag">${product.noise} dB</span>
           </div>
           <div class="price-line">
             <span class="price">${formatPrice(product.price)}</span>
@@ -217,7 +231,7 @@
         <div class="detail-topline">
           <span class="badge">${product.type}</span>
           <span class="badge">${product.silent ? "🔇 Silencieux" : "💨 Puissant"}</span>
-          <span class="badge">? ${product.rating.toFixed(1)} / 5</span>
+          <span class="badge">Note ${product.rating.toFixed(1)} / 5</span>
         </div>
         <h2>${product.name}</h2>
         <p class="detail-description">${product.description}</p>
@@ -238,12 +252,13 @@
         </div>
         <div class="detail-actions">
           <button class="btn btn-primary" type="button" data-add-to-cart="${product.id}">Ajouter au panier</button>
+          <button class="btn btn-secondary" type="button" data-pay-product="${product.id}">Payer maintenant</button>
           <a class="btn btn-secondary" href="catalogue.html">Retour catalogue</a>
         </div>
         <div class="reviews" aria-label="Avis clients">
           ${product.reviews.map(([name, text]) => `
             <div class="review">
-              <strong>? ? ? ? ? ${name}</strong>
+              <strong>Note 5/5 - ${name}</strong>
               <p>${text}</p>
             </div>
           `).join("")}
@@ -274,6 +289,13 @@
       $("#deliveryNote").textContent = "Ajoutez un ventilateur pour commencer.";
     } else {
       $("#deliveryNote").textContent = "Livraison standard calculée dans le total.";
+    }
+
+    const paymentNote = $("#paymentNote");
+    if (paymentNote) {
+      paymentNote.textContent = isAnyPaymentConfigured()
+        ? "Paiement sécurisé via Stripe. Apple Pay apparaît si l'appareil et le domaine sont compatibles."
+        : "Paiement à configurer : ajoute tes liens Stripe dans js/payment-config.js.";
     }
 
     if (lines.length === 0) {
@@ -307,10 +329,10 @@
     $("#checkoutButton")?.addEventListener("click", () => {
       const totals = getCartTotals();
       if (totals.count === 0) {
-        showToast("Ajoutez au moins un ventilateur avant de simuler la commande.");
+        showToast("Ajoutez au moins un produit avant de payer.");
         return;
       }
-      showToast(`Commande simulée : ${formatPrice(totals.total)}. Aucun paiement réel n'a été lancé.`);
+      startCartPayment();
     });
 
     $("#clearCartButton")?.addEventListener("click", () => {
@@ -368,6 +390,11 @@
         addToCart(addButton.dataset.addToCart);
       }
 
+      const payButton = event.target.closest("[data-pay-product]");
+      if (payButton) {
+        startProductPayment(payButton.dataset.payProduct);
+      }
+
       const qtyButton = event.target.closest("[data-qty-action]");
       if (qtyButton) {
         const id = qtyButton.dataset.id;
@@ -395,6 +422,43 @@
     showToast.timer = setTimeout(() => {
       toast.classList.remove("is-visible");
     }, 2200);
+  }
+
+  function startProductPayment(id) {
+    const product = getProduct(id);
+    if (!product) return;
+
+    const link = getPaymentLink(id);
+    if (!isPaymentLinkReady(link)) {
+      showToast(`Paiement non configuré pour ${product.name}. Ajoute son lien Stripe dans js/payment-config.js.`);
+      return;
+    }
+
+    window.location.href = link;
+  }
+
+  function startCartPayment() {
+    const lines = getCartLines();
+    const cartLink = paymentConfig.cartCheckoutLink || "";
+
+    if (isPaymentLinkReady(cartLink)) {
+      window.location.href = cartLink;
+      return;
+    }
+
+    if (lines.length === 1) {
+      const [{ product, quantity }] = lines;
+      const link = getPaymentLink(product.id);
+      if (isPaymentLinkReady(link)) {
+        if (quantity > 1) {
+          showToast("Redirection Stripe. Vérifie la quantité sur la page de paiement si elle est ajustable.");
+        }
+        window.location.href = link;
+        return;
+      }
+    }
+
+    showToast("Paiement panier non configuré. Ajoute des liens Stripe dans js/payment-config.js ou crée un backend Stripe Checkout.");
   }
 
   markActivePage();

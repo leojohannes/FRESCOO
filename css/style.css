@@ -980,6 +980,13 @@ input[type="range"] {
   font-weight: 800;
 }
 
+.payment-note {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .cart-summary .btn {
   width: 100%;
   margin-top: 10px;
