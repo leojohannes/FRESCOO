@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Panier FRESCOO avec rÃ©capitulatif, quantitÃ©s et calcul du total." />
+  <meta name="description" content="Panier FRESCOO avec récapitulatif, quantités et calcul du total." />
   <title>FRESCOO - Panier</title>
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/data.js" defer></script>
@@ -13,7 +13,7 @@
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="announcement">Offre Ã©tÃ© : expÃ©dition rapide 24/48h, retour sous 30 jours</div>
+    <div class="announcement">Offre été : expédition rapide 24/48h, retour sous 30 jours</div>
     <nav class="navbar" aria-label="Navigation principale">
       <a class="brand" href="index.html" aria-label="Accueil FRESCOO">
         <img class="brand-logo" src="assets/logo-sans-texte.png" alt="" aria-hidden="true" />
@@ -24,11 +24,11 @@
         <a class="nav-link" data-page="catalogue" href="catalogue.html">Catalogue</a>
         <a class="nav-link" data-page="produit" href="produit.html">Produit</a>
         <a class="nav-link" data-page="panier" href="panier.html">Panier</a>
-        <a class="nav-link" data-page="apropos" href="apropos.html">Ã€ propos</a>
+        <a class="nav-link" data-page="apropos" href="apropos.html">À propos</a>
         <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
       </div>
       <a class="cart-button" href="panier.html" aria-label="Voir le panier">
-        <span aria-hidden="true">ðŸ›’</span>
+        <span aria-hidden="true">🛒</span>
         <span>Panier</span>
         <span class="cart-count">0</span>
       </a>
@@ -39,27 +39,27 @@
     <section class="page-hero page-hero-small">
       <div class="section-inner">
         <p class="eyebrow">Panier</p>
-        <h1>Votre rÃ©capitulatif</h1>
-        <p>Ajoutez, retirez ou ajustez les quantitÃ©s. Le total se calcule immÃ©diatement, sans paiement rÃ©el.</p>
+        <h1>Votre récapitulatif</h1>
+        <p>Ajoutez, retirez ou ajustez les quantités. Le total se calcule immédiatement, sans paiement réel.</p>
       </div>
     </section>
 
     <section class="section section-tint">
       <div class="section-inner cart-layout">
         <div class="cart-list" id="cartItems" aria-live="polite"></div>
-        <aside class="cart-summary" aria-label="RÃ©sumÃ© du panier">
+        <aside class="cart-summary" aria-label="Résumé du panier">
           <h2>Total commande</h2>
           <div class="summary-line">
             <span>Sous-total</span>
-            <strong id="subtotalAmount">0 â‚¬</strong>
+            <strong id="subtotalAmount">0 €</strong>
           </div>
           <div class="summary-line">
             <span>Livraison</span>
-            <strong id="deliveryAmount">0 â‚¬</strong>
+            <strong id="deliveryAmount">0 €</strong>
           </div>
           <div class="summary-line summary-total">
             <span>Total</span>
-            <strong id="totalAmount">0 â‚¬</strong>
+            <strong id="totalAmount">0 €</strong>
           </div>
           <p class="delivery-note" id="deliveryNote">Ajoutez un ventilateur pour commencer.</p>
           <button class="btn btn-primary" type="button" id="checkoutButton">Simuler la commande</button>
@@ -72,10 +72,10 @@
       <div class="section-inner">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">ComplÃ©ter mon panier</p>
+            <p class="section-kicker">Compléter mon panier</p>
             <h2>Nos recommandations</h2>
           </div>
-          <p>Le panier est conservÃ© pendant votre navigation grÃ¢ce au stockage local du navigateur.</p>
+          <p>Le panier est conservé pendant votre navigation grâce au stockage local du navigateur.</p>
         </div>
         <div class="product-grid" id="cartRecommendations" aria-live="polite"></div>
       </div>
@@ -97,17 +97,17 @@
       <div>
         <h4>Aide</h4>
         <a href="contact.html">Contact</a>
-        <a href="apropos.html">Ã€ propos</a>
-        <a href="apropos.html#mentions">Mentions lÃ©gales</a>
+        <a href="apropos.html">À propos</a>
+        <a href="apropos.html#mentions">Mentions légales</a>
       </div>
       <div>
-        <h4>RÃ©seaux</h4>
+        <h4>Réseaux</h4>
         <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
         <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
         <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
-    <p class="footer-bottom">Â© 2026 FRESCOO. Site de dÃ©monstration sans paiement rÃ©el.</p>
+    <p class="footer-bottom">© 2026 FRESCOO. Site de démonstration sans paiement réel.</p>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

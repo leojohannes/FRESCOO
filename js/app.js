@@ -98,13 +98,13 @@
         <div class="product-body">
           <div class="product-meta">
             <span>${product.type}</span>
-            <span class="rating">★ ${product.rating.toFixed(1)} (${product.reviewsCount})</span>
+            <span class="rating">? ${product.rating.toFixed(1)} (${product.reviewsCount})</span>
           </div>
           <h3>${product.name}</h3>
           <p>${product.short}</p>
           <div class="feature-tags">
             <span class="feature-tag">${product.silent ? "🔇" : "💨"} ${silentLabel}</span>
-            <span class="feature-tag">⚡ ${product.power} W</span>
+            <span class="feature-tag">? ${product.power} W</span>
             <span class="feature-tag">💬 ${product.noise} dB</span>
           </div>
           <div class="price-line">
@@ -217,7 +217,7 @@
         <div class="detail-topline">
           <span class="badge">${product.type}</span>
           <span class="badge">${product.silent ? "🔇 Silencieux" : "💨 Puissant"}</span>
-          <span class="badge">★ ${product.rating.toFixed(1)} / 5</span>
+          <span class="badge">? ${product.rating.toFixed(1)} / 5</span>
         </div>
         <h2>${product.name}</h2>
         <p class="detail-description">${product.description}</p>
@@ -243,7 +243,7 @@
         <div class="reviews" aria-label="Avis clients">
           ${product.reviews.map(([name, text]) => `
             <div class="review">
-              <strong>★ ★ ★ ★ ★ ${name}</strong>
+              <strong>? ? ? ? ? ${name}</strong>
               <p>${text}</p>
             </div>
           `).join("")}
